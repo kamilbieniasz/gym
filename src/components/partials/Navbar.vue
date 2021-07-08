@@ -23,16 +23,16 @@ name: "Navbar"
     background-color: transparent;
     position: fixed;
     z-index:10;
-    -webkit-box-shadow: 0px 2px 6px 2px #FF0000; 
-    box-shadow: 0px 2px 6px 2px #FF0000;
+    -webkit-box-shadow: 0px 2px 6px 2px $red-details; 
+    box-shadow: 0px 2px 6px 2px $red-details;
 
     & > a {
         padding: 20px;
-        color: white;
+        color: $color-white;
         font-size: $bigger-font;
         transition: 300ms easy-in-out;
         cursor: pointer;
-        text-shadow: 2px 2px #000000;
+        text-shadow: 2px 2px $color-black;
 
         &:hover{
             transform: scale(1.1);
