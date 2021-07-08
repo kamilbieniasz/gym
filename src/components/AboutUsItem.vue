@@ -35,6 +35,7 @@ export default {
         }
 
         & > .icon{
+            padding: 20px;
             font-size: $icon-size;
         }
 

@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar">
+    <nav class="navbar" :class="{changeBackground: scrollPos > 50}">
         <a>O nas</a>
         <a>Cennik</a>
         <a>Zajęcia grupowe</a>
@@ -8,8 +8,23 @@
     </nav>
 </template>
 <script>
+import { ref, onMounted } from 'vue';
+
 export default {
-name: "Navbar"
+name: "Navbar",
+setup(){
+    const scrollPos = ref();
+
+    const updateScroll = () => {
+        scrollPos.value = window.scrollY;
+    }
+
+    onMounted(() => {
+        window.addEventListener('scroll', updateScroll);
+    })
+
+    return {scrollPos};
+}
 }
 
 </script>
@@ -25,6 +40,7 @@ name: "Navbar"
     z-index:10;
     -webkit-box-shadow: 0px 2px 6px 2px $red-details; 
     box-shadow: 0px 2px 6px 2px $red-details;
+    transition: 300ms ease-in-out;
 
     & > a {
         padding: 20px;
@@ -38,6 +54,11 @@ name: "Navbar"
             transform: scale(1.1);
             transition: 300ms easy-in-out;
         }
+    }
+
+    &.changeBackground {
+        background-color: #212121;
+        transition: 300ms ease-in-out;
     }
 }
     
