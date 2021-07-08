@@ -3,6 +3,8 @@
   <div class="scrollContainer">
     <Home />
     <AboutUs />
+    <Parallax />
+    <Passes />
   </div>
 </template>
 
@@ -10,13 +12,17 @@
 import Navbar from './components/partials/Navbar';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
+import Parallax from './components/Parallax';
+import Passes from './components/Passes';
 
 export default {
   name: 'App',
   components: {
     Navbar,
     Home,
-    AboutUs
+    AboutUs,
+    Parallax,
+    Passes
   }
 }
 </script>
