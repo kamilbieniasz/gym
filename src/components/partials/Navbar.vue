@@ -22,6 +22,9 @@ name: "Navbar"
     justify-content: center;
     background-color: transparent;
     position: fixed;
+    z-index:10;
+    -webkit-box-shadow: 0px 2px 6px 2px #FF0000; 
+    box-shadow: 0px 2px 6px 2px #FF0000;
 
     & > a {
         padding: 20px;
@@ -29,6 +32,7 @@ name: "Navbar"
         font-size: $bigger-font;
         transition: 300ms easy-in-out;
         cursor: pointer;
+        text-shadow: 2px 2px #000000;
 
         &:hover{
             transform: scale(1.1);
