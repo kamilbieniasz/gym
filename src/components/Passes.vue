@@ -1,9 +1,11 @@
 <template>
     <section class="passesWrapper">
         <div class="sectionContent">
-            <h2 class="title">Karnety</h2>
+            <div class="title">
+                <h2>Karnety</h2>
+            </div>
             <div class="gridContainer">
-                <CardItem title="Open">
+                <!-- <CardItem title="Open">
                     <ul>
                         <li>wejście o każdej porze</li>
                         <li>nieograniczona ilość wejść</li>
@@ -48,18 +50,18 @@
                         <li>darmowe rozpisanie diety</li>
                         <li>karnet ważny rok</li>
                     </ul>
-                </CardItem>
+                </CardItem> -->
             </div>
         </div>
     </section>
 </template>
 <script>
-import CardItem from './CardItem.vue';
+// import CardItem from './CardItem.vue';
 
 export default {
     name: "Passes",
     components: {
-        CardItem
+        // CardItem
     }
 }
 </script>
@@ -71,12 +73,11 @@ export default {
         & > .sectionContent{
 
             & > .gridContainer{
-            display:grid;
-            grid-gap:60px;
-            grid-template-columns: repeat(3, 1fr);
-            justify-content: center;
-            justify-items: center;
-            align-items: center;
+                display:grid;
+                grid-template-columns: repeat(5, 1fr);
+                justify-content: center;
+                justify-items: center;
+                align-items: center;
 
                 & ul{
                     margin:10px 0;

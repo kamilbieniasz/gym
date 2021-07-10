@@ -3,13 +3,13 @@
   <div class="scrollContainer">
     <Home />
     <AboutUs />
-    <Parallax backgroundImage="/images/parallax/parallax1.jpg" />
+    <!-- <Parallax backgroundImage="/images/parallax/parallax1.jpg" /> -->
     <Passes />
-    <Parallax backgroundImage="/images/parallax/parallax2.jpg" />
+    <!-- <Parallax backgroundImage="/images/parallax/parallax2.jpg" /> -->
     <GroupClasses />
-    <Parallax backgroundImage="/images/parallax/parallax3.jpg" />
+    <!-- <Parallax backgroundImage="/images/parallax/parallax3.jpg" /> -->
     <PersonalTrainnig />
-    <Parallax backgroundImage="/images/parallax/parallax4.jpg" />
+    <!-- <Parallax backgroundImage="/images/parallax/parallax4.jpg" /> -->
     <Contact />
   </div>
 </template>
@@ -18,7 +18,7 @@
 import Navbar from './components/partials/Navbar';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
-import Parallax from './components/Parallax';
+// import Parallax from './components/Parallax';
 import Passes from './components/Passes';
 import GroupClasses from './components/GroupClasses';
 import PersonalTrainnig from './components/PersonalTraining';
@@ -30,7 +30,7 @@ export default {
     Navbar,
     Home,
     AboutUs,
-    Parallax,
+    // Parallax,
     Passes,
     GroupClasses,
     PersonalTrainnig,
