@@ -76,7 +76,6 @@ export default {
         height:50%;
         display:flex;
         justify-content: center;
-
         & > .description{
             width:50%;
             display:flex;
