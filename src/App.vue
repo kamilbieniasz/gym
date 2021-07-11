@@ -7,7 +7,7 @@
     <Passes />
     <Parallax bgImageJpg="/images/parallax/parallax2.jpg" bgImageWebp="/images/parallax/parallax2.webp" />
     <GroupClasses />
-    <!-- <Parallax backgroundImage="/images/parallax/parallax3.jpg" /> -->
+    <Parallax bgImageJpg="/images/parallax/parallax3.jpg" bgImageWebp="/images/parallax/parallax3.webp" />
     <PersonalTrainnig />
     <!-- <Parallax backgroundImage="/images/parallax/parallax4.jpg" /> -->
     <Contact />

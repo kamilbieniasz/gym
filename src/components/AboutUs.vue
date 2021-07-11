@@ -70,7 +70,6 @@ export default {
 
 .aboutUsWrapper{
     width:100%;
-    padding:10px 0;
 
     & > .descriptionContainer{
         width:100%;

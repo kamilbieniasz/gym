@@ -12,18 +12,17 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/scss/style.scss';
     .groupClassesItem{
-        width:300px;
-        height:400px;
+        width:100%;
+        height:100%;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
 
         display:flex;
         align-items: flex-end;
-        justify-content: flex-end;
+        justify-content: center;
 
-        border-radius: 0 25px 0 25px;
-        border:2px solid black;
+        border:2px solid $color-white;
 
         &:hover .title {
             transform: scale(1.2);
@@ -32,10 +31,9 @@ export default {
 
         & > .title{
             background-color: $color-dark;
-            margin: 0;
+            margin: 10px 0;
             padding:10px 20px;
             color: $color-white;
-            margin: -10px -10px;
             -webkit-box-shadow: $shadow-box; 
             box-shadow: $shadow-box;
             transition: 300ms ease-in-out;
