@@ -135,22 +135,22 @@ export default {
 
             &:nth-child(1){
                 background-image: url('../assets/images/aboutUs/1.jpg');
-                background-image: -webkit-image-set(url('../assets/images/aboutUs/1.jpg')1x );
+                background-image: -webkit-image-set(url('../assets/images/aboutUs/1.webp')1x );
             }
 
             &:nth-child(2){
                 background-image: url('../assets/images/aboutUs/2.jpg');
-                background-image: -webkit-image-set(url('../assets/images/aboutUs/2.jpg')1x );
+                background-image: -webkit-image-set(url('../assets/images/aboutUs/2.webp')1x );
             }
 
             &:nth-child(3){
                 background-image: url('../assets/images/aboutUs/3.jpg');
-                background-image: -webkit-image-set(url('../assets/images/aboutUs/3.jpg')1x );
+                background-image: -webkit-image-set(url('../assets/images/aboutUs/3.webp')1x );
             }
 
             &:nth-child(4){
                 background-image: url('../assets/images/aboutUs/4.jpg');
-                background-image: -webkit-image-set(url('../assets/images/aboutUs/4.jpg')1x );
+                background-image: -webkit-image-set(url('../assets/images/aboutUs/4.webp')1x );
             }
 
             & > p {
