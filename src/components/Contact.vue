@@ -1,30 +1,35 @@
 <template>
     <section class="contactWrapper">
         <div class="sectionContent">
-            <h2 class="title">Kontakt</h2>
+            <div class="title">
+                <h2>Kontakt</h2>
+            </div>
             <div class="contactContainer">
                 <h3><strong>Telefon:</strong>123 456 789</h3>
                 <h3><strong>Email:</strong>gymmaster@gym.pl</h3>
                 <h3><strong>Nasza siłownia otwarta jest całodobowo!</strong></h3>
             </div>
-            <div class="buttonsContainer">
-                <div class="buttons" v-for="(city, index) in cities" v-bind:key="city">
-                    <button @click="showMap(index)">{{city.name}}</button>
+            <div class="mapsControls">
+                <div class="buttonsContainer">
+                    <div class="buttons" v-for="(city, index) in cities" v-bind:key="city">
+                        <button @click="showMap(index)">{{city.name}}</button>
+                    </div>
                 </div>
-            </div>
-            <div class="mapContainer">
-                <div class="map" v-for="city in cities" v-bind:key="city">
-                    <iframe :src="city.src" v-if="city.status" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="mapContainer">
+                    <div class="map" v-for="city in cities" v-bind:key="city">
+                        <iframe :src="city.src" v-if="city.status" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 </template>
 <script>
+import {ref} from 'vue';
 export default {
     name: "Contact",
     setup(){
-        const cities = [
+        const cities = ref([
             {
                 name:"Rzeszów",
                 src:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4309.457375788767!2d21.99577232595733!3d50.04098763299425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfb018c3f4fbd%3A0x5033f39cd685a056!2sGaleria%20Rzesz%C3%B3w!5e0!3m2!1spl!2spl!4v1625845604051!5m2!1spl!2spl",
@@ -45,10 +50,10 @@ export default {
                 src:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2323.5479224445667!2d18.598495815962302!3d54.38263640428397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd74ea79e3fd01%3A0x3cd7c4eada1b8ed4!2sGaleria%20Ba%C5%82tycka!5e0!3m2!1spl!2spl!4v1625845692140!5m2!1spl!2spl",
                 status:false
             }
-        ]
+        ])
 
         const clearAll = () => {
-            cities.forEach(city => {
+            cities.value.forEach(city => {
                 city.status = false;
             })
 
@@ -56,7 +61,7 @@ export default {
 
         const showMap = (index) => {
             clearAll();
-            cities[index].status = true;
+            cities.value[index].status = true;
             console.log(cities);
         }
 
@@ -70,10 +75,8 @@ export default {
 
 .contactWrapper{
     & > .sectionContent{
-        display:grid;
-        grid-template-areas: "title title"
-                             "contactContainer contactContainer"
-                             "buttonsContainer mapContainer";
+        display:flex;
+        flex-direction: column;
 
         & > .title{
             grid-area: title;
@@ -91,38 +94,48 @@ export default {
             }
         }
 
-        & > .buttonsContainer{
-            grid-area: buttonsContainer;
+        & > .mapsControls{
             display:flex;
-            flex-direction: column;
+            margin: 40px 0;
 
-            & > .buttons{
-                & > button {
-                    margin:30px;
-                    padding: 20px 35px;
-                    border: 2px solid black;
-                    background-color:transparent;
-                    border-radius: 0 15px 0 15px;
-                    cursor: pointer;
-                    transition: 300ms ease-in-out;
+            & > .buttonsContainer{
+                height:100%;
+                grid-area: buttonsContainer;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
 
-                    &:hover{
-                        transform:scale(1.1);
-                        background-color: $color-dark;
-                        color:$color-white;
-                        transition: 300ms;
-                        box-shadow: $light-shadow-box;
+                & > .buttons{
+                    // margin: 0 20px
+                    padding: 0 70px;
+
+                    & > button {
+                        width: 100%;
+                        margin:30px;
+                        padding: 15px 10px;
+                        border: 2px solid black;
+                        background-color:transparent;
+                        border-radius: 0 15px 0 15px;
+                        cursor: pointer;
+                        transition: 300ms ease-in-out;
+
+                        &:hover{
+                            transform:scale(1.1);
+                            background-color: $color-dark;
+                            color:$color-white;
+                            transition: 300ms;
+                            box-shadow: $light-shadow-box;
+                        }
                     }
                 }
             }
-        }
 
-        & > .mapContainer{
-            height:fit-content;
-            grid-area: mapContainer;
+            & > .mapContainer{
+                height:fit-content;
+                grid-area: mapContainer;
+            }
         }
     }
-
 }
 
 </style>

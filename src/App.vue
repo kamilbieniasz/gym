@@ -3,13 +3,13 @@
   <div class="scrollContainer">
     <Home />
     <AboutUs />
-    <Parallax backgroundImage="/images/parallax/parallax1.jpg" />
+    <Parallax bgImageJpg="/images/parallax/parallax1.jpg" bgImageWebp="/images/parallax/parallax1.webp" />
     <Passes />
-    <Parallax backgroundImage="/images/parallax/parallax2.jpg" />
+    <!-- <Parallax backgroundImage="/images/parallax/parallax2.jpg" /> -->
     <GroupClasses />
-    <Parallax backgroundImage="/images/parallax/parallax3.jpg" />
+    <!-- <Parallax backgroundImage="/images/parallax/parallax3.jpg" /> -->
     <PersonalTrainnig />
-    <Parallax backgroundImage="/images/parallax/parallax4.jpg" />
+    <!-- <Parallax backgroundImage="/images/parallax/parallax4.jpg" /> -->
     <Contact />
   </div>
 </template>

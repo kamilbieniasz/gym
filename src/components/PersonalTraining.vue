@@ -1,7 +1,9 @@
 <template>
     <section class="personalTrainingWrapper">
         <div class="sectionContent">
-            <h2 class="title">Trening personalny</h2>
+            <div class="title">
+                <h2>Trening personalny</h2>
+            </div>
             <div class="description">
                 <ul>
                     <li>Dopiero zaczynasz i nie wiesz jak się do tego zabrać?</li>

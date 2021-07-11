@@ -1,7 +1,9 @@
 <template>
   <section class="groupClassesWrapper">
       <div class="sectionContent">
-        <h2 class="title">Zajęcia grupowe</h2>
+            <div class="title">
+                <h2>Zajęcia grupowe</h2>
+            </div>
         <div class="gridContainer">
             <GroupClassesItem image="/images/groupClasses/zumba.jpg" title="Zumba"/>
             <GroupClassesItem image="/images/groupClasses/joga.jpg" title="Joga"/>
