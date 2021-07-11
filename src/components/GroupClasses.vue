@@ -1,19 +1,19 @@
 <template>
   <section class="groupClassesWrapper">
-        <h2>Zajęcia grupowe</h2>
+        <h2 class="title">Zajęcia grupowe</h2>
         <div class="gridContainer">
-            <GroupClassesItem image="/images/groupClasses/zumba.jpg" title="Zumba"/>
-            <GroupClassesItem image="/images/groupClasses/joga.jpg" title="Joga"/>
-            <GroupClassesItem image="/images/groupClasses/kettlebell.jpg" title="Kettlebell"/>
-            <GroupClassesItem image="/images/groupClasses/cardio.jpg" title="Cardio"/>
-            <GroupClassesItem image="/images/groupClasses/crunches.jpg" title="Płaski brzuch"/>
-            <GroupClassesItem image="/images/groupClasses/tbc.jpg" title="TBC"/>
-            <GroupClassesItem image="/images/groupClasses/stretching.jpg" title="Stretching"/>
-            <GroupClassesItem image="/images/groupClasses/trx.jpg" title="TRX"/>
-            <GroupClassesItem image="/images/groupClasses/boxing.jpg" title="Boks"/>
-            <GroupClassesItem image="/images/groupClasses/step.jpg" title="Power step"/>
-            <GroupClassesItem image="/images/groupClasses/kickboxing.jpg" title="Kick boxing"/>
-            <GroupClassesItem image="/images/groupClasses/crossfit.jpg" title="Crossfit"/>
+            <GroupClassesItem bgImageJpg="/images/groupClasses/zumba.jpg" bgImageWebp="/images/groupClasses/zumba.webp" title="Zumba"/>
+            <GroupClassesItem bgImageJpg="/images/groupClasses/joga.jpg" bgImageWebp="/images/groupClasses/joga.webp" title="Joga"/>
+            <GroupClassesItem bgImageJpg="/images/groupClasses/kettlebell.jpg" bgImageWebp="/images/groupClasses/kettlebell.webp" title="Kettlebell"/>
+            <GroupClassesItem bgImageJpg="/images/groupClasses/cardio.jpg" bgImageWebp="/images/groupClasses/cardio.webp" title="Cardio"/>
+            <GroupClassesItem bgImageJpg="/images/groupClasses/crunches.jpg" bgImageWebp="/images/groupClasses/crunches.webp" title="Płaski brzuch"/>
+            <GroupClassesItem bgImageJpg="/images/groupClasses/tbc.jpg" bgImageWebp="/images/groupClasses/tbc.webp" title="TBC"/>
+            <GroupClassesItem bgImageJpg="/images/groupClasses/stretching.jpg" bgImageWebp="/images/groupClasses/stretching.webp" title="Stretching"/>
+            <GroupClassesItem bgImageJpg="/images/groupClasses/trx.jpg" bgImageWebp="/images/groupClasses/trx.webp" title="TRX"/>
+            <GroupClassesItem bgImageJpg="/images/groupClasses/boxing.jpg" bgImageWebp="/images/groupClasses/boxing.webp" title="Boks"/>
+            <GroupClassesItem bgImageJpg="/images/groupClasses/step.jpg" bgImageWebp="/images/groupClasses/step.webp" title="Power step"/>
+            <GroupClassesItem bgImageJpg="/images/groupClasses/kickboxing.jpg" bgImageWebp="/images/groupClasses/kickboxing.webp" title="Kick boxing"/>
+            <GroupClassesItem bgImageJpg="/images/groupClasses/crossfit.jpg" bgImageWebp="/images/groupClasses/crossfit.webp" title="Crossfit"/>
         </div>
       <!-- <button class="showMoreBtn" @click="showMore">{{btnText}}</button> -->
   </section>  

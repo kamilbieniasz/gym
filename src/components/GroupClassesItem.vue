@@ -1,12 +1,12 @@
 <template>
-    <div class="groupClassesItem" :style="{'background-image': 'url(' + require(`../assets${image}`) + ')'}">
+    <div class="groupClassesItem" :style="{'background-image': 'url(' + require(`../assets${bgImageJpg}`)+')', 'background-image': '-webkit-image-set(url(' + require(`../assets${bgImageWebp}`) + ')1x )'}">
         <h2 class="title">{{title}}</h2>
     </div>
 </template>
 <script>
 export default {
     name: "GroupClassesItem",
-    props:['image', 'title']
+    props:['bgImageJpg', 'bgImageWebp', 'title']
 }
 </script>
 <style lang="scss" scoped>
