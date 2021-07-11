@@ -37,7 +37,7 @@ setup(){
     justify-content: center;
     background-color: transparent;
     position: fixed;
-    z-index:10;
+    z-index:20;
     -webkit-box-shadow: 0px 2px 6px 2px $red-details; 
     box-shadow: 0px 2px 6px 2px $red-details;
     transition: 300ms ease-in-out;

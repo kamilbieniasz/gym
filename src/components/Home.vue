@@ -1,8 +1,6 @@
 <template>
     <section class="homeWrapper">
-        <video autoplay loop muted>
-            <source src="../assets/movie/backgroundVideo.mp4" />
-        </video>
+        <h1>Gym Master</h1>
     </section>
 </template>
 <script>
@@ -16,11 +14,20 @@ export default {
     .homeWrapper{
         background-size: cover;
         height:60vh;
+        background-image: url('../assets/images/home/home.jpg');
+        background-image: -webkit-image-set(url('../assets/images/home/home.jpg')1x );
+        background-blend-mode: color-burn;
+        background-color: rgba($color-dark, 0.3);
+        background-position: center;
+        background-size: cover;
+        display:flex;
+        justify-content: center;
+        align-items: center;
 
-        & > video{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        & > h1{
+            font-size: $icon-size;
+            color: $color-white;
+            user-select: none;
         }
     }
 </style>

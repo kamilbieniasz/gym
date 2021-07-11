@@ -4,8 +4,8 @@
 section{
     width: 100%;
     height: calc(100vh - 91px);
-    -webkit-box-shadow: $shadow-box; 
-    box-shadow: $shadow-box;
+    // -webkit-box-shadow: $shadow-box; 
+    // box-shadow: $shadow-box;
 
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@ section{
         margin: 0;
         padding: 20px 0;
         font-size:$biggest-font;
-        background-color:$color-dark;
-        color:$color-white;
+        background-color:white;
+        color: $color-dark;
     }
 }

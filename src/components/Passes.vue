@@ -1,10 +1,7 @@
 <template>
     <section class="passesWrapper">
-        <div class="sectionContent">
-            <div class="title">
-                <h2>Karnety</h2>
-            </div>
-            <div class="gridContainer">
+        <h2 class="title">Karnety</h2>
+        <div class="gridContainer">
                 <!-- <CardItem title="Open">
                     <ul>
                         <li>wejście o każdej porze</li>
@@ -51,7 +48,6 @@
                         <li>karnet ważny rok</li>
                     </ul>
                 </CardItem> -->
-            </div>
         </div>
     </section>
 </template>
@@ -69,22 +65,22 @@ export default {
     @import "../assets/scss/style.scss";
 
     .passesWrapper{
+        width: 100%;
+        & > .gridContainer{
+            width:100%;
+            height:100%;
+            display:grid;
+            grid-template-columns: repeat(5, 1fr);
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            background-color:$color-dark;
 
-        & > .sectionContent{
-
-            & > .gridContainer{
-                display:grid;
-                grid-template-columns: repeat(5, 1fr);
-                justify-content: center;
-                justify-items: center;
-                align-items: center;
-
-                & ul{
-                    margin:10px 0;
-                    padding: 20px;
-                    & > li{
-                        font-size: $medium-font;
-                    }
+            & ul{
+                margin:10px 0;
+                padding: 20px;
+                & > li{
+                    font-size: $medium-font;
                 }
             }
         }

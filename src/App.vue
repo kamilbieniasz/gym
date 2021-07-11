@@ -3,7 +3,7 @@
   <div class="scrollContainer">
     <Home />
     <AboutUs />
-    <!-- <Parallax backgroundImage="/images/parallax/parallax1.jpg" /> -->
+    <Parallax bgImageJpg="/images/parallax/parallax1.jpg" bgImageWebp="/images/parallax/parallax1.webp" />
     <Passes />
     <!-- <Parallax backgroundImage="/images/parallax/parallax2.jpg" /> -->
     <GroupClasses />
@@ -18,7 +18,7 @@
 import Navbar from './components/partials/Navbar';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
-// import Parallax from './components/Parallax';
+import Parallax from './components/Parallax';
 import Passes from './components/Passes';
 import GroupClasses from './components/GroupClasses';
 import PersonalTrainnig from './components/PersonalTraining';
@@ -30,7 +30,7 @@ export default {
     Navbar,
     Home,
     AboutUs,
-    // Parallax,
+    Parallax,
     Passes,
     GroupClasses,
     PersonalTrainnig,

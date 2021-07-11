@@ -10,8 +10,11 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur omnis dicta voluptatibus optio voluptates sit rerum quos commodi, dolor vel unde quas officiis ratione eaque voluptas, beatae totam reiciendis excepturi.
                     </p>
                 </div>
-                <div class="diagonal"></div>
-                <img src="../assets/images/aboutUs/main.jpg" />
+                <picture>
+                    <source srcset="../assets/images/aboutUs/main.webp" type="image/webp">
+                    <source srcset="../assets/images/aboutUs/main.jpg" type="image/jpeg">
+                    <img src="../assets/images/aboutUs/main.jpg" />
+                </picture>
             </div>
             <div class="gridContainer">
                 <div class="gridItem">
@@ -66,40 +69,44 @@ export default {
 
 
 .aboutUsWrapper{
-    & > .title {
-        font-size:$biggest-font;
-        border-bottom: 2px solid white;
-    }
+    width:100%;
+    padding:10px 0;
 
     & > .descriptionContainer{
-            height:50%;
+        width:100%;
+        height:50%;
+        display:flex;
+        justify-content: center;
+
+        & > .description{
+            width:50%;
             display:flex;
-            // padding: 10px 0;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: $color-dark;
+            color: $color-white;
 
-            & > .description{
-                display:flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-                background-color: $color-dark;
-                color: $color-white;
-
-                & > h2 {
-                    font-size: $bigger-font;
-                    text-align: center;
-                }
-
-                & > p {
-                    font-size: $medium-font;
-                    padding:0 40px;
-                }
+            & > h2 {
+                font-size: $bigger-font;
+                text-align: center;
             }
+
+            & > p {
+                font-size: $medium-font;
+                padding:0 40px;
+            }
+        }
+
+             & > picture{
+            width:50%;
 
             & > img{
-                width:50%;
+                width:100%;
+                height:100%;
                 object-fit:cover;
                 object-position: center;
-                // height: 100%;
             }
+        }
     }
 
     & > .gridContainer{
@@ -128,18 +135,22 @@ export default {
 
             &:nth-child(1){
                 background-image: url('../assets/images/aboutUs/1.jpg');
+                background-image: -webkit-image-set(url('../assets/images/aboutUs/1.jpg')1x );
             }
 
             &:nth-child(2){
                 background-image: url('../assets/images/aboutUs/2.jpg');
+                background-image: -webkit-image-set(url('../assets/images/aboutUs/2.jpg')1x );
             }
 
             &:nth-child(3){
                 background-image: url('../assets/images/aboutUs/3.jpg');
+                background-image: -webkit-image-set(url('../assets/images/aboutUs/3.jpg')1x );
             }
 
             &:nth-child(4){
                 background-image: url('../assets/images/aboutUs/4.jpg');
+                background-image: -webkit-image-set(url('../assets/images/aboutUs/4.jpg')1x );
             }
 
             & > p {
@@ -156,7 +167,7 @@ export default {
             }
                 
             &:hover::before{
-                height:70%;
+                transform: scaleY(0.7);
                 transition: 300ms ease-in-out;
             }
 
