@@ -17,7 +17,30 @@
                 </picture>
             </div>
             <div class="gridContainer">
-                <div class="gridItem">
+                <GridItemLayer 
+                    title="Dostęp 24/7" 
+                    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cumque harum tempora tenetur architecto facilis quas iste facere dolores reiciendis! Quidem reprehenderit voluptatibus omnis, consectetur vero soluta officiis architecto eius!" 
+                    bgImageJpg="/images/aboutUs/1.jpg"
+                    bgImageWebp="/images/aboutUs/1.webp"/>
+
+                <GridItemLayer 
+                    title="Karnet szyty na miarę" 
+                    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cumque harum tempora tenetur architecto facilis quas iste facere dolores reiciendis! Quidem reprehenderit voluptatibus omnis, consectetur vero soluta officiis architecto eius!" 
+                    bgImageJpg="/images/aboutUs/2.jpg"
+                    bgImageWebp="/images/aboutUs/2.webp"/>
+                
+                <GridItemLayer 
+                    title="Najlepszy sprzęt" 
+                    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cumque harum tempora tenetur architecto facilis quas iste facere dolores reiciendis! Quidem reprehenderit voluptatibus omnis, consectetur vero soluta officiis architecto eius!" 
+                    bgImageJpg="/images/aboutUs/3.jpg"
+                    bgImageWebp="/images/aboutUs/3.webp"/>
+
+                <GridItemLayer 
+                    title="Plan treningowy" 
+                    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cumque harum tempora tenetur architecto facilis quas iste facere dolores reiciendis! Quidem reprehenderit voluptatibus omnis, consectetur vero soluta officiis architecto eius!" 
+                    bgImageJpg="/images/aboutUs/4.jpg"
+                    bgImageWebp="/images/aboutUs/4.webp"/>
+                <!-- <div class="gridItem">
                     <h2>Dostęp 24/7</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cumque harum tempora tenetur architecto facilis quas iste facere dolores reiciendis! Quidem reprehenderit voluptatibus omnis, consectetur vero soluta officiis architecto eius!</p>
                 </div>
@@ -32,7 +55,7 @@
                 <div class="gridItem">
                     <h2>Plan treningowy</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cumque harum tempora tenetur architecto facilis quas iste facere dolores reiciendis! Quidem reprehenderit voluptatibus omnis, consectetur vero soluta officiis architecto eius!</p>
-                </div>
+                </div> -->
 
                 <!-- <CardItem 
                 title="Dostęp 24/7" 
@@ -55,11 +78,13 @@
 </template>
 <script>
 // import CardItem from './CardItem';
+import GridItemLayer from './GridItemLayer';
 
 export default {
     name: 'AboutUs',
     components: {
         // CardItem,
+        GridItemLayer
     }
     
 }
@@ -116,63 +141,63 @@ export default {
         align-items: center;
         text-align: center;
 
-        & > .gridItem{
-            width:100%;
-            height:100%;
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: color-burn;
-            color: $color-white;
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-            position:relative;
-            border-width: 2px 2px 0 2px;
-            border-style: solid;
-            border-color:$color-white;
+        // & > .gridItem{
+        //     width:100%;
+        //     height:100%;
+        //     background-size: cover;
+        //     background-position: center;
+        //     background-blend-mode: color-burn;
+        //     color: $color-white;
+        //     display:flex;
+        //     flex-direction: column;
+        //     justify-content: center;
+        //     position:relative;
+        //     border-width: 2px 2px 0 2px;
+        //     border-style: solid;
+        //     border-color:$color-white;
 
-            &:nth-child(1){
-                background-image: url('../assets/images/aboutUs/1.jpg');
-                background-image: -webkit-image-set(url('../assets/images/aboutUs/1.webp')1x );
-            }
+        //     &:nth-child(1){
+        //         background-image: url('../assets/images/aboutUs/1.jpg');
+        //         background-image: -webkit-image-set(url('../assets/images/aboutUs/1.webp')1x );
+        //     }
 
-            &:nth-child(2){
-                background-image: url('../assets/images/aboutUs/2.jpg');
-                background-image: -webkit-image-set(url('../assets/images/aboutUs/2.webp')1x );
-            }
+        //     &:nth-child(2){
+        //         background-image: url('../assets/images/aboutUs/2.jpg');
+        //         background-image: -webkit-image-set(url('../assets/images/aboutUs/2.webp')1x );
+        //     }
 
-            &:nth-child(3){
-                background-image: url('../assets/images/aboutUs/3.jpg');
-                background-image: -webkit-image-set(url('../assets/images/aboutUs/3.webp')1x );
-            }
+        //     &:nth-child(3){
+        //         background-image: url('../assets/images/aboutUs/3.jpg');
+        //         background-image: -webkit-image-set(url('../assets/images/aboutUs/3.webp')1x );
+        //     }
 
-            &:nth-child(4){
-                background-image: url('../assets/images/aboutUs/4.jpg');
-                background-image: -webkit-image-set(url('../assets/images/aboutUs/4.webp')1x );
-            }
+        //     &:nth-child(4){
+        //         background-image: url('../assets/images/aboutUs/4.jpg');
+        //         background-image: -webkit-image-set(url('../assets/images/aboutUs/4.webp')1x );
+        //     }
 
-            & > p {
-                padding:0 10px;
-            }
+        //     & > p {
+        //         padding:0 10px;
+        //     }
 
-            &::before{
-                content: '';
-                width:100%;
-                height:100%;
-                background-color:rgba($color-dark, 0.7);
-                position: absolute;
-                transition: 300ms ease-in-out;
-            }
+        //     &::before{
+        //         content: '';
+        //         width:100%;
+        //         height:100%;
+        //         background-color:rgba($color-dark, 0.7);
+        //         position: absolute;
+        //         transition: 300ms ease-in-out;
+        //     }
                 
-            &:hover::before{
-                transform: scaleY(0.7);
-                transition: 300ms ease-in-out;
-            }
+        //     &:hover::before{
+        //         transform: scaleY(0.7);
+        //         transition: 300ms ease-in-out;
+        //     }
 
-            & > h2, & > p{
-                z-index: 10;
-            }
-        }
+        //     & > h2, & > p{
+        //         z-index: 10;
+        //     }
+        // }
     }
 }
     
