@@ -67,10 +67,6 @@ export default {
         display:flex;
         justify-content: center;
 
-        @include respond-to(max-width, 768px){
-            flex-direction: column;
-        }
-
         & > .description{
             width:50%;
             display:flex;

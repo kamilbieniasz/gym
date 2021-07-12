@@ -72,7 +72,7 @@ export default {
 @import '../assets/scss/style.scss';
 
 .contactWrapper{
-    padding-bottom: 0;
+    padding: 0 !important;
 
         & > .title{
             grid-area: title;

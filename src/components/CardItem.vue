@@ -36,7 +36,7 @@ export default {
 
             & > .title{
                 margin:0;
-                font-size: $first-title;
+                font-size: $medium-font;
             }
 
             & > .content{

@@ -37,6 +37,10 @@ export default {
     & > h2{
         text-align:center;
         padding:0 10px;
+
+        @include respond-to(max-width, 768px){
+            font-size: $medium-font;
+        }
     }
 
     & > p {

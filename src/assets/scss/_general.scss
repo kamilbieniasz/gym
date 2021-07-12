@@ -2,31 +2,39 @@
 @import "./fonts";
 @import "./mixins";
 
-section{
+body{
+    margin:0;
+    padding:0;
+}
+
+.scrollContainer{
     width: 100%;
-    height: calc(100vh - 70px);
-    min-height: calc(100vh - 70px);
+    height: fit-content;
 
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    padding:0 0 10px 0;
-    overflow-x: hidden;
+    & > section{
+        width: 100%;
+        height: calc(100vh - 70px);
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        padding:0 0 10px 0;
+        // overflow-x: hidden;
 
-    
-    @include respond-to(max-width, 1024px){
-        height:fit-content;
-    }
+        @include respond-to(max-width, 1024px){
+            height:fit-content;
+        }
 
-    & > .title{
-        width:100%;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        padding: 20px 0;
-        font-size:$biggest-font;
-        background-color:white;
-        color: $color-dark;
+        & > .title{
+            width:100%;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+            padding: 20px 0;
+            font-size:$biggest-font;
+            background-color:white;
+            color: $color-dark;
+        }
     }
 }
