@@ -24,9 +24,22 @@ export default {
 
         border:2px solid $color-white;
 
+        @include respond-to(max-width, 1024px){
+            min-height: 200px;
+            border: none;
+        }
+
+        @include respond-to(max-width, 768px){
+            // justify-content: flex-end;
+        }
+
         &:hover .title {
             transform: scale(1.2);
             transition: 300ms ease-in-out;
+
+            @include respond-to(max-width, 768px){
+                transform: scale(1);
+            }
         }
 
         & > .title{
@@ -37,6 +50,10 @@ export default {
             -webkit-box-shadow: $shadow-box; 
             box-shadow: $shadow-box;
             transition: 300ms ease-in-out;
+
+            @include respond-to(max-width, 768px){
+                padding: 0;
+            }
         }
     }
 </style>

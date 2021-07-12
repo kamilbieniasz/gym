@@ -43,6 +43,7 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/scss/style.scss';
 .groupClassesWrapper{
+    width: 100vw;
     display:flex;
 
     & > .gridContainer{
@@ -50,6 +51,15 @@ export default {
         height:100%;
         display:grid;
         grid-template-columns: repeat(4, 1fr);
+        grid-gap:10px;
+
+        @include respond-to(max-width, 1024px){
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include respond-to(max-width, 768px){
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }
 
