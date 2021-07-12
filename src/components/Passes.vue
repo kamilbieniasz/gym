@@ -152,7 +152,6 @@ export default {
 
     .passesWrapper{
         width: 100%;
-        // padding: 10px 0;
 
         & > .gridContainer{
             width:100%;
@@ -162,11 +161,20 @@ export default {
             justify-content: center;
             justify-items: center;
             align-items: center;
-            // background-color:$color-dark;
             background-image: url('../assets/images/pass/pass.jpg');
             background-image: -webkit-image-set(url('../assets/images/pass/pass.webp')1x );
             background-size: cover;
             background-position: center;
+
+            @include respond-to(max-width, 1024px){
+                grid-template-columns: repeat(2, 1fr);
+                grid-row-gap: 20px;
+                padding: 10px 0;
+            }
+
+            @include respond-to(max-width, 768px){
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
     }
 

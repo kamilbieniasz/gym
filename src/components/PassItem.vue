@@ -29,6 +29,16 @@ export default {
     flex-direction: column;
     background-color:rgba($color-dark, 0.7);
 
+    @include respond-to(max-width, 1024px){
+        height:100%;
+        margin: 10px 0;
+    }
+
+    @include respond-to(max-width, 768px){
+        height:fit-content;
+        margin: 10px 0;
+    }
+
     &:hover{
         box-shadow: $light-shadow-box;
         -webkit-box-shadow: $light-shadow-box;

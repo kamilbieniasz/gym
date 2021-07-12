@@ -96,11 +96,6 @@ export default {
 .aboutUsWrapper{
     width:100%;
 
-    @include respond-to(max-width, 1024px){
-        height:fit-content;
-        flex-direction: column;
-    }
-
     & > .descriptionContainer{
         width:100%;
         height:50%;
