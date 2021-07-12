@@ -72,17 +72,20 @@ export default {
 @import '../assets/scss/style.scss';
 
 .contactWrapper{
-    background-color:$color-dark;
+    padding-bottom: 0;
 
         & > .title{
             grid-area: title;
         }
 
         & > .content{
+            width:100%;
             height:100%;
             display:flex;
             flex-direction:column;
             justify-content:center;
+            align-items: center;
+            background-color:$color-dark;
 
         & > .contactContainer {
             grid-area: contactContainer;

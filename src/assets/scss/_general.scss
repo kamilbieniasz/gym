@@ -3,14 +3,13 @@
 
 section{
     width: 100%;
-    height: calc(100vh - 91px);
-    // -webkit-box-shadow: $shadow-box; 
-    // box-shadow: $shadow-box;
+    height: calc(100vh - 70px);
 
     display: flex;
     flex-direction: column;
     align-items:center;
-    padding:10px 0;
+    padding:0 0 10px 0;
+    overflow-x: hidden;
 
     & > .title{
         width:100%;

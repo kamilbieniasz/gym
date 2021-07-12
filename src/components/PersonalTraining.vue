@@ -40,33 +40,41 @@ export default {
 @import '../assets/scss/style.scss';
 
 .personalTrainingWrapper{
-    background-color: $color-dark;
 
     & > .descriptionContainer{
+        height:100%;
+        height:50%;
         display:flex;
         align-items: center;
 
         & > .description{
             width:50%;
-            height:fit-content;
-            padding: 40px;
+            height:100%;
+            // padding: 40px;
             display:flex;
             flex-direction: column;
             align-items: left;
+            justify-content: space-evenly;
             color: $color-white;
+            background-color: $color-dark;
 
             & > ul{ 
                 margin: 0;
+                padding: 0 80px;
 
                 & > li{
                     font-size: $medium-font;
                 }
             }
+
+            & > h2{
+                padding:0 40px;
+            }
         }
         
         & > picture{
             width:50%;
-            height:10 0%;
+            height:100%;
             
             & > img{
                 width:100%;

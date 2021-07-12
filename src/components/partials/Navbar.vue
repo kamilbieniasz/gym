@@ -38,8 +38,8 @@ setup(){
     background-color: transparent;
     position: fixed;
     z-index:20;
-    -webkit-box-shadow: 0px 2px 6px 2px $red-details; 
-    box-shadow: 0px 2px 6px 2px $red-details;
+    -webkit-box-shadow: $shadow-box; 
+    box-shadow: $shadow-box;
     transition: 300ms ease-in-out;
 
     & > a {
