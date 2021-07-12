@@ -1,9 +1,7 @@
 <template>
     <section class="contactWrapper">
-        <div class="sectionContent">
-            <div class="title">
-                <h2>Kontakt</h2>
-            </div>
+        <h2 class="title">Kontakt</h2>
+        <div class="content">
             <div class="contactContainer">
                 <h3><strong>Telefon:</strong>123 456 789</h3>
                 <h3><strong>Email:</strong>gymmaster@gym.pl</h3>
@@ -74,22 +72,28 @@ export default {
 @import '../assets/scss/style.scss';
 
 .contactWrapper{
-    & > .sectionContent{
-        display:flex;
-        flex-direction: column;
+    background-color:$color-dark;
 
         & > .title{
             grid-area: title;
         }
 
+        & > .content{
+            height:100%;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+
         & > .contactContainer {
             grid-area: contactContainer;
             display:flex;
-            flex-direction: column;
+            // flex-direction: column;
             align-items: center;
             font-size:$medium-font;
 
             & > h3 {
+                background-color:$color-white;
+                padding: 10px 20px;
                 margin: 5px;
             }
         }
@@ -114,15 +118,15 @@ export default {
                         margin:30px;
                         padding: 15px 10px;
                         border: 2px solid black;
-                        background-color:transparent;
+                        background-color:$color-white;
                         border-radius: 0 15px 0 15px;
                         cursor: pointer;
                         transition: 300ms ease-in-out;
 
                         &:hover{
                             transform:scale(1.1);
-                            background-color: $color-dark;
-                            color:$color-white;
+                            // background-color: $color-dark;
+                            // color:$color-white;
                             transition: 300ms;
                             box-shadow: $light-shadow-box;
                         }
@@ -133,6 +137,11 @@ export default {
             & > .mapContainer{
                 height:fit-content;
                 grid-area: mapContainer;
+
+                & > .map{
+                    box-shadow: $shadow-box;
+                    -webkit-box-shadow: $shadow-box;
+                }
             }
         }
     }
