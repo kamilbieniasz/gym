@@ -1,3 +1,3 @@
-# Prace w trakcie
+# W trakcie prac
 
 https://masterygym.netlify.app/
