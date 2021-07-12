@@ -17,10 +17,26 @@
             </picture>
         </div>
         <div class="gridContainer">
-            <GridItemLayer icon="id-card" title="Posiadamy wykwalifikowaną kadrę" bgImageJpg="/images/personalTraining/1.jpg" bgImageWebp="/images/personalTraining/1.webp" />
-            <GridItemLayer icon="id-card" title="Trening jest dopasowany do twoich potrzeb" bgImageJpg="/images/personalTraining/3.jpg" bgImageWebp="/images/personalTraining/3.webp" />
-            <GridItemLayer icon="id-card" title="Idywidualnie ułożona dietaę" bgImageJpg="/images/personalTraining/4.jpg" bgImageWebp="/images/personalTraining/4.webp" />
-            <GridItemLayer icon="id-card" title="Kontakt z trenerem nie tylko na treningachę" bgImageJpg="/images/personalTraining/5.jpg" bgImageWebp="/images/personalTraining/5.webp" />
+            <GridItemLayer 
+            title="Posiadamy wykwalifikowaną kadrę" 
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cumque harum tempora tenetur architecto facilis quas iste facere dolores reiciendis! Quidem reprehenderit voluptatibus omnis, consectetur vero soluta officiis architecto eius!"
+            bgImageJpg="/images/personalTraining/1.jpg" 
+            bgImageWebp="/images/personalTraining/1.webp" />
+            <GridItemLayer 
+            title="Trening jest dopasowany do twoich potrzeb" 
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cumque harum tempora tenetur architecto facilis quas iste facere dolores reiciendis! Quidem reprehenderit voluptatibus omnis, consectetur vero soluta officiis architecto eius!"
+            bgImageJpg="/images/personalTraining/3.jpg" 
+            bgImageWebp="/images/personalTraining/3.webp" />
+            <GridItemLayer 
+            title="Idywidualnie ułożona dietę" 
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cumque harum tempora tenetur architecto facilis quas iste facere dolores reiciendis! Quidem reprehenderit voluptatibus omnis, consectetur vero soluta officiis architecto eius!"
+            bgImageJpg="/images/personalTraining/4.jpg" 
+            bgImageWebp="/images/personalTraining/4.webp" />
+            <GridItemLayer 
+            title="Kontakt z trenerem nie tylko na treningachę" 
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cumque harum tempora tenetur architecto facilis quas iste facere dolores reiciendis! Quidem reprehenderit voluptatibus omnis, consectetur vero soluta officiis architecto eius!"
+            bgImageJpg="/images/personalTraining/5.jpg" 
+            bgImageWebp="/images/personalTraining/5.webp" />
         </div>
     </section>
 </template>
@@ -96,7 +112,7 @@ export default {
     }
 
     & > .gridContainer{
-         width:100%;
+        width:100%;
         height:50%;
         display:grid;
         grid-template-columns: repeat(4, 1fr);

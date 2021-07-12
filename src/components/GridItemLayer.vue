@@ -38,7 +38,7 @@ export default {
         text-align:center;
         padding:0 10px;
 
-        @include respond-to(max-width, 768px){
+        @include respond-to(max-width, 1024px){
             font-size: $medium-font;
         }
     }
