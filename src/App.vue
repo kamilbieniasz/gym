@@ -11,6 +11,7 @@
     <PersonalTrainnig />
     <Parallax bgImageJpg="/images/parallax/parallax4.jpg" bgImageWebp="/images/parallax/parallax4.webp" /> 
     <Contact />
+    <Navigation />
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import Passes from './components/Passes';
 import GroupClasses from './components/GroupClasses';
 import PersonalTrainnig from './components/PersonalTraining';
 import Contact from './components/Contact';
+import Navigation from './components/partials/Navigation';
 
 export default {
   name: 'App',
@@ -34,7 +36,8 @@ export default {
     Passes,
     GroupClasses,
     PersonalTrainnig,
-    Contact
+    Contact,
+    Navigation
   }
 }
 </script>
