@@ -3,9 +3,20 @@
         <h2 class="title">Kontakt</h2>
         <div class="content">
             <div class="contactContainer">
-                <h3><strong>Telefon:</strong>123 456 789</h3>
-                <h3><strong>Email:</strong>gymmaster@gym.pl</h3>
-                <h3><strong>Nasza siłownia otwarta jest całodobowo!</strong></h3>
+                <div class="contact">
+                    <h3><strong>Telefon: </strong>123 456 789</h3>
+                    <h3><strong>Email: </strong>gymmaster@gym.pl</h3>
+                    <h3><strong>Nasza siłownia otwarta jest całodobowo!</strong></h3>
+                </div>
+                <form>
+                    <div>
+                        <input />
+                        <input />
+                        <input />
+                    </div>
+                    <textarea maxlength="400" />
+                </form>
+                <button>Wyślij</button>
             </div>
             <div class="mapsControls">
                 <div class="buttonsContainer">
@@ -15,7 +26,7 @@
                 </div>
                 <div class="mapContainer">
                     <div class="map" v-for="city in cities" v-bind:key="city">
-                        <iframe :src="city.src" v-if="city.status" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe :src="city.src" v-if="city.status" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -82,22 +93,49 @@ export default {
             width:100%;
             height:100%;
             display:flex;
-            flex-direction:column;
-            justify-content:center;
+            // flex-direction:column;
+            justify-content:space-evenly;
             align-items: center;
             background-color:$color-dark;
+            background-image: url('../assets/images/contact/contact.jpg');
+            background-image: -webkit-image-set(url('../assets/images/contact/contact.webp')1x );
+            background-size:cover;
+            background-position:center;
+            background-blend-mode: color-burn;
+            background-color:rgba($color-dark, 0.6);
+
 
         & > .contactContainer {
-            grid-area: contactContainer;
+            // grid-area: contactContainer;
+            height:100%;
             display:flex;
-            // flex-direction: column;
+            flex-direction: column;
+            justify-content: center;
+            // grid-template-columns: repeat(1, 1fr);
             align-items: center;
             font-size:$medium-font;
 
-            & > h3 {
-                background-color:$color-white;
-                padding: 10px 20px;
-                margin: 5px;
+            @include respond-to(max-width, 1024px){
+                flex-direction: column;
+            }
+
+            & > .contact{
+                & > h3 {
+                    // background-color:$color-white;
+                    padding: 10px 20px;
+                    margin: 5px;
+                    color:$color-white;
+                }
+            }
+
+            & > form {
+                width: 90%;
+
+                & > textarea{
+                    width: 100%;
+                    height: 200px;
+                    resize: none;
+                }
             }
         }
 
@@ -113,7 +151,6 @@ export default {
                 justify-content: center;
 
                 & > .buttons{
-                    // margin: 0 20px
                     padding: 0 70px;
 
                     & > button {
@@ -128,8 +165,6 @@ export default {
 
                         &:hover{
                             transform:scale(1.1);
-                            // background-color: $color-dark;
-                            // color:$color-white;
                             transition: 300ms;
                             box-shadow: $light-shadow-box;
                         }
