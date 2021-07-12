@@ -19,20 +19,20 @@
             </picture>
         </div>
         <div class="gridContainer">
-            <PersonalTrainingItem icon="medal" text="Posiadamy wykwalifikowaną kadrę"/>
-            <PersonalTrainingItem icon="id-card" text="Każdy z naszych trenerów ukończył dodatkowe kursy"/>
-            <PersonalTrainingItem icon="align-left" text="Trening jest dopasowany do twoich potrzeb"/>
-            <PersonalTrainingItem icon="apple-alt" text="Idywidualnie ułożona dieta"/>
-            <PersonalTrainingItem icon="envelope" text="Kontakt z trenerem nie tylko na treningach"/>
+            <GridItemLayer icon="id-card" title="Posiadamy wykwalifikowaną kadrę" bgImageJpg="/images/personalTraining/1.jpg" bgImageWebp="/images/personalTraining/1.webp" />
+            <GridItemLayer icon="id-card" title="Każdy z naszych trenerów ukończył dodatkowe kursy" bgImageJpg="/images/personalTraining/2.jpg" bgImageWebp="/images/personalTraining/2.webp" />
+            <GridItemLayer icon="id-card" title="Trening jest dopasowany do twoich potrzeb" bgImageJpg="/images/personalTraining/3.jpg" bgImageWebp="/images/personalTraining/3.webp" />
+            <GridItemLayer icon="id-card" title="Idywidualnie ułożona dietaę" bgImageJpg="/images/personalTraining/4.jpg" bgImageWebp="/images/personalTraining/4.webp" />
+            <GridItemLayer icon="id-card" title="Kontakt z trenerem nie tylko na treningachę" bgImageJpg="/images/personalTraining/5.jpg" bgImageWebp="/images/personalTraining/5.webp" />
         </div>
     </section>
 </template>
 <script>
-import PersonalTrainingItem from './personalTrainingItem.vue';
+import GridItemLayer from './GridItemLayer';
 export default {
     name: "PersonalTraining",
     components: {
-        PersonalTrainingItem
+        GridItemLayer
     }
 }
 </script>
@@ -44,7 +44,7 @@ export default {
 
     & > .descriptionContainer{
         display:flex;
-        height:45%;
+        align-items: center;
 
         & > .description{
             width:50%;
@@ -79,9 +79,9 @@ export default {
     }
 
     & > .gridContainer{
-        margin-top:60px;
+        width:100%;
+        height:100%;
         display:grid;
-        grid-gap:30px;
         grid-template-columns: repeat(5, 1fr);
     } 
 }

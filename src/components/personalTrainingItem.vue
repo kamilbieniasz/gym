@@ -15,22 +15,31 @@ export default {
 @import '../assets/scss/style.scss';
 
 .square{
-    width:200px;
-    height:200px;
+    width:100%;
+    height:100%;
     background-color: $color-dark;
     color: $color-white;
     display:flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
-    -webkit-box-shadow: $shadow-box; 
-    box-shadow: $shadow-box;
+    justify-content: center;
+    padding: 15px 0;
+    border:2px solid $color-white;
+    // -webkit-box-shadow: $shadow-box; 
+    // box-shadow: $shadow-box;
     transition: 300ms ease-in-out;
 
-    &:hover{
-        transform: scale(1.1);
-        transition: 300ms ease-in-out;
+    &:first-child{
+        border-left:none;
     }
+    &:last-child{
+        border-right: none;
+    }
+
+    // &:hover{
+    //     transform: scale(1.1);
+    //     transition: 300ms ease-in-out;
+    // }
 
     & > .icon{
         font-size: $icon-size;
