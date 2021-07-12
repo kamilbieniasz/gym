@@ -96,11 +96,21 @@ export default {
 .aboutUsWrapper{
     width:100%;
 
+    @include respond-to(max-width, 1024px){
+        height:fit-content;
+        flex-direction: column;
+    }
+
     & > .descriptionContainer{
         width:100%;
         height:50%;
         display:flex;
         justify-content: center;
+
+        @include respond-to(max-width, 768px){
+            flex-direction: column;
+        }
+
         & > .description{
             width:50%;
             display:flex;
@@ -108,6 +118,10 @@ export default {
             justify-content: space-evenly;
             background-color: $color-dark;
             color: $color-white;
+
+            @include respond-to(max-width, 768px){
+                width:100%;
+            }
 
             & > h2 {
                 font-size: $bigger-font;
@@ -122,6 +136,10 @@ export default {
 
              & > picture{
             width:50%;
+
+            @include respond-to(max-width, 768px){
+                display:none;
+            }
 
             & > img{
                 width:100%;
@@ -141,63 +159,9 @@ export default {
         align-items: center;
         text-align: center;
 
-        // & > .gridItem{
-        //     width:100%;
-        //     height:100%;
-        //     background-size: cover;
-        //     background-position: center;
-        //     background-blend-mode: color-burn;
-        //     color: $color-white;
-        //     display:flex;
-        //     flex-direction: column;
-        //     justify-content: center;
-        //     position:relative;
-        //     border-width: 2px 2px 0 2px;
-        //     border-style: solid;
-        //     border-color:$color-white;
-
-        //     &:nth-child(1){
-        //         background-image: url('../assets/images/aboutUs/1.jpg');
-        //         background-image: -webkit-image-set(url('../assets/images/aboutUs/1.webp')1x );
-        //     }
-
-        //     &:nth-child(2){
-        //         background-image: url('../assets/images/aboutUs/2.jpg');
-        //         background-image: -webkit-image-set(url('../assets/images/aboutUs/2.webp')1x );
-        //     }
-
-        //     &:nth-child(3){
-        //         background-image: url('../assets/images/aboutUs/3.jpg');
-        //         background-image: -webkit-image-set(url('../assets/images/aboutUs/3.webp')1x );
-        //     }
-
-        //     &:nth-child(4){
-        //         background-image: url('../assets/images/aboutUs/4.jpg');
-        //         background-image: -webkit-image-set(url('../assets/images/aboutUs/4.webp')1x );
-        //     }
-
-        //     & > p {
-        //         padding:0 10px;
-        //     }
-
-        //     &::before{
-        //         content: '';
-        //         width:100%;
-        //         height:100%;
-        //         background-color:rgba($color-dark, 0.7);
-        //         position: absolute;
-        //         transition: 300ms ease-in-out;
-        //     }
-                
-        //     &:hover::before{
-        //         transform: scaleY(0.7);
-        //         transition: 300ms ease-in-out;
-        //     }
-
-        //     & > h2, & > p{
-        //         z-index: 10;
-        //     }
-        // }
+        @include respond-to(max-width, 768px){
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }
     

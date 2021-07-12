@@ -55,6 +55,10 @@ export default {
     &:hover::before{
         transform: scaleY(0.8);
         transition: 300ms ease-in-out;
+
+        @include respond-to(max-width, 768px){
+            transform: scaleY(1);
+        }
     }
 
     & > h2, & > p, & > .icon{
