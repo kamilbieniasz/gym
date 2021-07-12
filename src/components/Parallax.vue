@@ -11,7 +11,7 @@ export default {
 <style lang="scss" scoped>
     @import "../assets/scss/style.scss";
     .parallaxWrapper{
-        height:50vh;
+        height:50vh !important;
         // background-image: url('../assets/images/parallax/parallax1.jpg');
         background-attachment: fixed;
         background-position: center;

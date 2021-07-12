@@ -3,14 +3,12 @@
         <h2 class="title">Trening personalny</h2>
         <div class="descriptionContainer">
             <div class="description">
-                <ul>
-                    <li>Dopiero zaczynasz i nie wiesz jak się do tego zabrać?</li>
-                    <li>Masz problem z ułożeniem planu treningowego pod siebie?</li>
-                    <li>Nie wiesz jak ułożyć dietę aby osiągnąć swój cel?</li>
-                    <li>Szukasz nowych inspiracji?</li>
-                    <li>Przez rutynę na treningach brakuje ci motywacji?</li>
-                </ul>
-                <h2>Jeżeli jedno z powyższych pytań dotyczy Ciebie zapytaj o darmowy, próbny trening w naszej recepcji. Nasi trenerzy chętnie odpowiedzą na te i inne pytania oraz we wszystkim Ci pomogą.</h2>
+                <h2>Lorem ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur omnis dicta voluptatibus optio voluptates sit rerum quos commodi, dolor vel unde quas officiis ratione eaque voluptas, beatae totam reiciendis excepturi.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur omnis dicta voluptatibus optio voluptates sit rerum quos commodi, dolor vel unde quas officiis ratione eaque voluptas, beatae totam reiciendis excepturi.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur omnis dicta voluptatibus optio voluptates sit rerum quos commodi, dolor vel unde quas officiis ratione eaque voluptas, beatae totam reiciendis excepturi.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur omnis dicta voluptatibus optio voluptates sit rerum quos commodi, dolor vel unde quas officiis ratione eaque voluptas, beatae totam reiciendis excepturi.
+                    </p>
             </div>
             <picture>
                 <source srcset="../assets/images/personalTraining/personal_training.webp" type="image/webp">
@@ -20,7 +18,6 @@
         </div>
         <div class="gridContainer">
             <GridItemLayer icon="id-card" title="Posiadamy wykwalifikowaną kadrę" bgImageJpg="/images/personalTraining/1.jpg" bgImageWebp="/images/personalTraining/1.webp" />
-            <GridItemLayer icon="id-card" title="Każdy z naszych trenerów ukończył dodatkowe kursy" bgImageJpg="/images/personalTraining/2.jpg" bgImageWebp="/images/personalTraining/2.webp" />
             <GridItemLayer icon="id-card" title="Trening jest dopasowany do twoich potrzeb" bgImageJpg="/images/personalTraining/3.jpg" bgImageWebp="/images/personalTraining/3.webp" />
             <GridItemLayer icon="id-card" title="Idywidualnie ułożona dietaę" bgImageJpg="/images/personalTraining/4.jpg" bgImageWebp="/images/personalTraining/4.webp" />
             <GridItemLayer icon="id-card" title="Kontakt z trenerem nie tylko na treningachę" bgImageJpg="/images/personalTraining/5.jpg" bgImageWebp="/images/personalTraining/5.webp" />
@@ -42,21 +39,25 @@ export default {
 .personalTrainingWrapper{
 
     & > .descriptionContainer{
-        height:100%;
+        width:100%;
         height:50%;
         display:flex;
-        align-items: center;
 
         & > .description{
             width:50%;
-            height:100%;
-            // padding: 40px;
             display:flex;
             flex-direction: column;
-            align-items: left;
             justify-content: space-evenly;
-            color: $color-white;
             background-color: $color-dark;
+            color: $color-white;
+
+            @include respond-to(max-width, 1024px){
+                padding: 40px 0;
+            }
+
+            @include respond-to(max-width, 768px){
+                width:100%;
+            }
 
             & > ul{ 
                 margin: 0;
@@ -67,30 +68,45 @@ export default {
                 }
             }
 
-            & > h2{
+            & > h2 {
+                font-size: $bigger-font;
+                text-align: center;
+            }
+
+            & > p {
+                font-size: $medium-font;
                 padding:0 40px;
             }
         }
         
         & > picture{
             width:50%;
-            height:100%;
-            
+
+            @include respond-to(max-width, 768px){
+                display:none;
+            }
+
             & > img{
                 width:100%;
                 height:100%;
-                object-fit: cover;
+                object-fit:cover;
                 object-position: center;
             }
         }
-
     }
 
     & > .gridContainer{
-        width:100%;
-        height:100%;
+         width:100%;
+        height:50%;
         display:grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+
+        @include respond-to(max-width, 768px){
+            grid-template-columns: repeat(2, 1fr);
+        }
     } 
 }
     

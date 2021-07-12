@@ -32,7 +32,7 @@ setup(){
 @import '../../assets/scss/style.scss';
 
 .navbar{
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     background-color: transparent;

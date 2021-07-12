@@ -153,6 +153,10 @@ export default {
     .passesWrapper{
         width: 100%;
 
+        @include respond-to(max-width, 1024px) {
+            height:fit-content;
+        }
+
         & > .gridContainer{
             width:100%;
             height:100%;
