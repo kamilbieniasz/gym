@@ -1,26 +1,47 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Navbar />
+  <div class="scrollContainer">
+    <Home />
+    <AboutUs />
+    <Parallax bgImageJpg="/images/parallax/parallax1.jpg" bgImageWebp="/images/parallax/parallax1.webp" />
+    <Passes />
+    <Parallax bgImageJpg="/images/parallax/parallax2.jpg" bgImageWebp="/images/parallax/parallax2.webp" />
+    <GroupClasses />
+    <Parallax bgImageJpg="/images/parallax/parallax3.jpg" bgImageWebp="/images/parallax/parallax3.webp" />
+    <PersonalTrainnig />
+    <Parallax bgImageJpg="/images/parallax/parallax4.jpg" bgImageWebp="/images/parallax/parallax4.webp" /> 
+    <Contact />
+    <Navigation />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from './components/partials/Navbar';
+import Home from './components/Home';
+import AboutUs from './components/AboutUs';
+import Parallax from './components/Parallax';
+import Passes from './components/Passes';
+import GroupClasses from './components/GroupClasses';
+import PersonalTrainnig from './components/PersonalTraining';
+import Contact from './components/Contact';
+import Navigation from './components/partials/Navigation';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Navbar,
+    Home,
+    AboutUs,
+    Parallax,
+    Passes,
+    GroupClasses,
+    PersonalTrainnig,
+    Contact,
+    Navigation
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import './assets/scss/style.scss';
 </style>
