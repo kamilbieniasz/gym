@@ -127,8 +127,17 @@ export default {
             background-blend-mode: color-burn;
             background-color:rgba($color-dark, 0.6);
 
+            @include respond-to(max-width, 768px){
+                padding: 40px 0;
+            }
+
             & > .contact{
                 display: flex;
+
+                @include respond-to(max-width, 768px){
+                    flex-direction: column;
+                }
+
                 & > h3 {
                     padding: 10px 20px;
                     margin: 5px;
@@ -140,6 +149,11 @@ export default {
             width:100%;
             display:flex;
             justify-content: space-evenly;
+            align-items: center;
+
+            @include respond-to(max-width, 768px){
+                flex-direction: column-reverse;
+            }
 
             & > .formContainer {
                 width:40%;
@@ -152,6 +166,10 @@ export default {
 
                 @include respond-to(max-width, 1024px){
                     flex-direction: column;
+                }
+
+                @include respond-to(max-width, 768px){
+                    width: 80%;
                 }
 
                 & > form {
@@ -173,7 +191,6 @@ export default {
                         }
 
                         & > textarea{
-                            width: 100%;
                             height: 200px;
                             resize: none;
                         }
@@ -182,6 +199,8 @@ export default {
                 & > button{
                     padding: 10px 15px;
                     cursor: pointer;
+                    margin: 10px;
+                    
                     &:hover{
                         transform:scale(1.1);
                         transition: 300ms;
@@ -196,11 +215,20 @@ export default {
                 flex-direction: column;
                 margin: 40px 0;
 
+                @include respond-to(max-width, 768px){
+                    width: 80%;
+                }
+
                 & > .buttonsContainer{
                     width:100%;
                     height:100%;
                     display:flex;
                     justify-content: center;
+
+                    @include respond-to(max-width, 1024px){
+                        display:grid;
+                        grid-template-columns: repeat(2, 1fr);
+                    }
 
                     & > .buttons{
                         margin:10px;
