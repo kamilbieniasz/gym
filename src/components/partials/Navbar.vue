@@ -18,17 +18,23 @@ export default {
 name: "Navbar",
 setup(){
     const scrollPos = ref();
+    const navbar = document.querySelector('#navbar');
 
     const updateScroll = () => {
-        scrollPos.value = window.scrollY;
+        scrollPos.value =  document.querySelector('.scrollContainer').scrollTop;
     }
 
     const scrollToSection = (selector) => {
-        document.querySelector(selector).scrollIntoView({ block:'end', behavior: 'smooth'});
+        if(window.innerWidth > 768){
+            document.querySelector(selector).scrollIntoView({ block:'end', behavior: 'smooth'});
+        } else {
+            document.querySelector(selector).scrollIntoView({ block:'start', behavior: 'smooth'});
+        }
+        navbar.classList.remove('navbar-active')
     }
 
     onMounted(() => {
-        window.addEventListener('scroll', updateScroll);
+        document.querySelector('.scrollContainer').addEventListener('scroll', updateScroll);
     })
 
     return {scrollPos, scrollToSection};

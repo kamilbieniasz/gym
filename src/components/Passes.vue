@@ -13,13 +13,11 @@
 <script>
 import {ref} from 'vue';
 import PassItem from './PassItem';
-// import CardItem from './CardItem.vue';
 
 export default {
     name: "Passes",
     components: {
         PassItem
-        // CardItem
     },
     setup() {
         const open = ref({
