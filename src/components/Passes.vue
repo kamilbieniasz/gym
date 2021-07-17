@@ -1,5 +1,5 @@
 <template>
-    <section class="passesWrapper">
+    <section id="passes" class="passesWrapper">
         <h2 class="title">Karnety</h2>
         <div class="gridContainer">
             <PassItem :pass="open" />
@@ -7,71 +7,6 @@
             <PassItem :pass="sixteen_entries" />
             <PassItem :pass="morning" />
             <PassItem :pass="annual" />
-            <!-- <div class="pass">
-                <h2>Open</h2>
-                <ul>
-                    <li>wejście o każdej porze</li>
-                    <li>nieograniczona ilość wejść</li>
-                    <li>nieograniczony czas spędzany na siłowni</li>
-                    <li>darmowa sauna</li>
-                    <li>darmowy jeden trening z trenerem personalnym</li>
-                    <li>karnet ważny miesiąc</li>
-                </ul>
-                <div class="buttonContainer">
-                    <button>Kup</button>
-                </div>
-            </div>
-            <div class="pass"></div>
-            <div class="pass"></div>
-            <div class="pass"></div>
-            <div class="pass"></div> -->
-            
-                <!-- <CardItem title="Open">
-                    <ul>
-                        <li>wejście o każdej porze</li>
-                        <li>nieograniczona ilość wejść</li>
-                        <li>nieograniczony czas spędzany na siłowni</li>
-                        <li>darmowa sauna</li>
-                        <li>darmowy jeden trening z trenerem personalnym</li>
-                        <li>karnet ważny miesiąc</li>
-                    </ul>
-                </CardItem>
-                <CardItem title="8 wejść">
-                    <ul>
-                        <li>wejście o każdej porze</li>
-                        <li>nieograniczony czas spędzany na siłowni</li>
-                        <li>karnet ważny przez 3 miesiące</li>
-                    </ul>
-                </CardItem>
-                <CardItem title="16 wejść">
-                    <ul>
-                        <li>wejście o każdej porze</li>
-                        <li>nieograniczony czas spędzany na siłowni</li>
-                        <li>darmowa sauna</li>
-                        <li>karnet ważny przez 6 miesięcy</li>
-                    </ul>
-                </CardItem>
-                <CardItem title="Poranny">
-                    <ul>
-                        <li>wejście do godziny 12:00</li>
-                        <li>nieograniczona ilość wejść</li>
-                        <li>nieograniczony czas spędzany na siłowni</li>
-                        <li>darmowa sauna</li>
-                        <li>darmowy jeden trening z trenerem personalnym</li>
-                        <li>karnet ważny miesiąc</li>
-                    </ul>
-                </CardItem>
-                <CardItem title="Roczny">
-                    <ul>
-                        <li>wejście o każdej porze</li>
-                        <li>nieograniczona ilość wejść</li>
-                        <li>nieograniczony czas spędzany na siłowni</li>
-                        <li>darmowa sauna</li>
-                        <li>darmowy miesiąc treningów z trenerem personalnym</li>
-                        <li>darmowe rozpisanie diety</li>
-                        <li>karnet ważny rok</li>
-                    </ul>
-                </CardItem> -->
         </div>
     </section>
 </template>
