@@ -1,5 +1,9 @@
 <template>
     <nav class="navbar" :class="{changeBackground: scrollPos > 50}">
+        <a @click="scrollToSection('#home')">
+            <fa class="icon" icon="dumbbell" />
+            <h2>GymMaster</h2>
+        </a>
         <a @click="scrollToSection('#aboutUs')">O nas</a>
         <a @click="scrollToSection('#passes')">Cennik</a>
         <a @click="scrollToSection('#groupClasses')">Zajęcia grupowe</a>
@@ -53,6 +57,19 @@ setup(){
         transition: 300ms easy-in-out;
         cursor: pointer;
         text-shadow: 2px 2px $color-black;
+
+        &:first-child{
+            display:flex;
+            & > .icon {
+                margin: 0 10px;
+            }
+
+            & > h2{
+                margin:0;
+                font-size:26px;
+            }
+
+        }
 
         &:hover{
             transform: scale(1.1);

@@ -1,5 +1,5 @@
 <template>
-    <section class="homeWrapper">
+    <section id="home" class="homeWrapper">
         <h1>Gym Master</h1>
     </section>
 </template>
