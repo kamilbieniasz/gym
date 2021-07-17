@@ -133,16 +133,33 @@ export default {
 
             & > .contact{
                 display: flex;
+                width:100%;
+                background-color:white;
+                justify-content: center;
+                box-shadow: 0px 0px 28px -9px $color-white;
+                -webkit-box-shadow: 0px 0px 28px -9px $color-white;
 
                 @include respond-to(max-width, 1366px){
+                    margin-top:10px;
+                }
+
+                @include respond-to(max-width, 1024px){
                     flex-direction: column;
                 }
 
                 & > h3 {
                     padding: 10px 20px;
                     margin: 5px;
-                    color:$color-white;
+                    color:$color-dark;
                     font-size: $first-title;
+                    
+                    @include respond-to(max-width, 1366px){
+                        font-size: $second-title;
+                    }
+
+                    @include respond-to(max-width, 1024px){
+                        text-align: center;
+                    }
 
                     @include respond-to(max-width, 768px){
                         text-align: center;
