@@ -13,7 +13,7 @@ export default {
 
     .homeWrapper{
         background-size: cover;
-        height:60vh;
+        height:100vh !important;
         background-image: url('../assets/images/home/home.jpg');
         background-image: -webkit-image-set(url('../assets/images/home/home.jpg')1x );
         background-blend-mode: color-burn;
