@@ -134,7 +134,7 @@ export default {
             & > .contact{
                 display: flex;
 
-                @include respond-to(max-width, 768px){
+                @include respond-to(max-width, 1366px){
                     flex-direction: column;
                 }
 
@@ -142,6 +142,12 @@ export default {
                     padding: 10px 20px;
                     margin: 5px;
                     color:$color-white;
+                    font-size: $first-title;
+
+                    @include respond-to(max-width, 768px){
+                        text-align: center;
+                        font-size: $third-title;
+                    }
                 }
             }
 
