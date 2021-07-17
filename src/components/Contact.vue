@@ -1,42 +1,44 @@
 <template>
     <section class="contactWrapper">
         <h2 class="title">Kontakt</h2>
-                    <div class="contact">
+        <div class="content"> 
+            <div class="contact">
                 <h3><strong>Telefon: </strong>123 456 789</h3>
                 <h3><strong>Email: </strong>gymmaster@gym.pl</h3>
                 <h3><strong>Nasza siłownia otwarta jest całodobowo!</strong></h3>
             </div>
-        <div class="content">                
             <div class="contactContainer">
-                <form>
-                    <span>
-                        <label for="name">Imię i nazwisko</label>
-                        <input id="name" type="text" required/>
-                    </span>
-                    <span>
-                        <label for="email">Email</label>
-                        <input id="email" type="email" required/>
-                    </span>
-                    <span>
-                        <label for="phone">Nr telefonu</label>
-                        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" minlength="9" maxlength="9" required/>
-                    </span>
-                    <span>
-                        <label for="message">Wiadomość</label>
-                        <textarea id="message" maxlength="400" required/>
-                    </span>
-                </form>
-                <button>Wyślij</button>
-            </div>
-            <div class="mapsControls">
-                <div class="buttonsContainer">
-                    <div class="buttons" v-for="(city, index) in cities" v-bind:key="city">
-                        <button @click="showMap(index)">{{city.name}}</button>
-                    </div>
+                <div class="formContainer">
+                    <form>
+                        <span>
+                            <label for="name">Imię i nazwisko</label>
+                            <input id="name" type="text" v-model="messageContent.name" required/>
+                        </span>
+                        <span>
+                            <label for="email">Email</label>
+                            <input id="email" type="email" v-model="messageContent.email" required/>
+                        </span>
+                        <span>
+                            <label for="phone">Nr telefonu</label>
+                            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" minlength="9" maxlength="9" v-model="messageContent.phone" required/>
+                        </span>
+                        <span>
+                            <label for="message">Wiadomość</label>
+                            <textarea id="message" maxlength="400" v-model="messageContent.message" required/>
+                        </span>
+                    </form>
+                    <button @click="sendMessage">Wyślij</button>
                 </div>
-                <div class="mapContainer">
-                    <div class="map" v-for="city in cities" v-bind:key="city">
-                        <iframe :src="city.src" v-if="city.status" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="mapsControls">
+                    <div class="buttonsContainer">
+                        <div class="buttons" v-for="(city, index) in cities" v-bind:key="city">
+                            <button @click="showMap(index)">{{city.name}}</button>
+                        </div>
+                    </div>
+                    <div class="mapContainer">
+                        <div class="map" v-for="city in cities" v-bind:key="city">
+                            <iframe :src="city.src" v-if="city.status" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -69,7 +71,14 @@ export default {
                 src:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2323.5479224445667!2d18.598495815962302!3d54.38263640428397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd74ea79e3fd01%3A0x3cd7c4eada1b8ed4!2sGaleria%20Ba%C5%82tycka!5e0!3m2!1spl!2spl!4v1625845692140!5m2!1spl!2spl",
                 status:false
             }
-        ])
+        ]);
+
+        const messageContent = ref({
+            name: "",
+            email: "",
+            phone: "",
+            message: ""
+        });
 
         const clearAll = () => {
             cities.value.forEach(city => {
@@ -84,7 +93,11 @@ export default {
             console.log(cities);
         }
 
-        return {cities, showMap}
+        const sendMessage = () => {
+            console.log(messageContent);
+        }
+
+        return {cities, messageContent, sendMessage, showMap}
     }
     
 }
@@ -103,7 +116,7 @@ export default {
             width:100%;
             height:100%;
             display:flex;
-            // flex-direction:column;
+            flex-direction:column;
             justify-content:space-evenly;
             align-items: center;
             background-color:$color-dark;
@@ -114,98 +127,114 @@ export default {
             background-blend-mode: color-burn;
             background-color:rgba($color-dark, 0.6);
 
-
-        & > .contactContainer {
-            // grid-area: contactContainer;
-            height:100%;
-            display:flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            // grid-template-columns: repeat(1, 1fr);
-            align-items: center;
-            font-size:$medium-font;
-
-            @include respond-to(max-width, 1024px){
-                flex-direction: column;
-            }
-
             & > .contact{
+                display: flex;
                 & > h3 {
-                    // background-color:$color-white;
                     padding: 10px 20px;
                     margin: 5px;
                     color:$color-white;
                 }
             }
 
-            & > form {
-                width: 90%;
+        & > .contactContainer{
+            width:100%;
+            display:flex;
+            justify-content: space-evenly;
+
+            & > .formContainer {
+                width:40%;
+                height:100%;
                 display:flex;
                 flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                font-size:$medium-font;
 
-                & > span{
+                @include respond-to(max-width, 1024px){
+                    flex-direction: column;
+                }
+
+                & > form {
+                    width: 90%;
                     display:flex;
                     flex-direction: column;
 
-                    & > label{
-                        color: $color-white;
-                    }
-                    & > input{
-                        height:25px;
-                        margin:10px 0;
-                    }
+                    & > span{
+                        display:flex;
+                        flex-direction: column;
 
-                    & > textarea{
-                        width: 100%;
-                        height: 200px;
-                        resize: none;
+                        & > label{
+                            color: $color-white;
+                        }
+
+                        & > input{
+                            height:25px;
+                            margin:10px 0;
+                        }
+
+                        & > textarea{
+                            width: 100%;
+                            height: 200px;
+                            resize: none;
+                        }
+                    }
+                }               
+                & > button{
+                    padding: 10px 15px;
+                    cursor: pointer;
+                    &:hover{
+                        transform:scale(1.1);
+                        transition: 300ms;
+                        box-shadow: $light-shadow-box;
                     }
                 }
-
-
             }
-        }
 
-        & > .mapsControls{
-            display:flex;
-            margin: 40px 0;
-
-            & > .buttonsContainer{
-                height:100%;
-                grid-area: buttonsContainer;
+            & > .mapsControls{
+                width:40%;
                 display:flex;
                 flex-direction: column;
-                justify-content: center;
+                margin: 40px 0;
 
-                & > .buttons{
-                    // padding: 0 70px;
+                & > .buttonsContainer{
+                    width:100%;
+                    height:100%;
+                    display:flex;
+                    justify-content: center;
 
-                    & > button {
-                        width: 100%;
-                        // margin:30px;
-                        // padding: 15px 10px;
-                        border: 2px solid black;
-                        background-color:$color-white;
-                        border-radius: 0 15px 0 15px;
-                        cursor: pointer;
-                        transition: 300ms ease-in-out;
+                    & > .buttons{
+                        margin:10px;
 
-                        &:hover{
-                            transform:scale(1.1);
-                            transition: 300ms;
-                            box-shadow: $light-shadow-box;
+                        & > button {
+                            width: 100%;
+                            padding: 10px 15px;
+                            border: 2px solid black;
+                            background-color:$color-white;
+                            cursor: pointer;
+                            transition: 300ms ease-in-out;
+
+                            &:hover{
+                                transform:scale(1.1);
+                                transition: 300ms;
+                                box-shadow: $light-shadow-box;
+                            }
                         }
                     }
                 }
-            }
 
-            & > .mapContainer{
-                height:fit-content;
-                grid-area: mapContainer;
+                & > .mapContainer{
+                    height:fit-content;
 
-                & > .map{
-                    box-shadow: $shadow-box;
-                    -webkit-box-shadow: $shadow-box;
+                    & > .map{
+                        box-shadow: $shadow-box;
+                        -webkit-box-shadow: $shadow-box;
+                        background-color:white;
+
+                        & > iframe {
+                            width:100%;
+                            height:400px;
+                        }
+                    }
                 }
             }
         }
