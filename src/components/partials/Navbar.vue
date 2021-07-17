@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar" :class="{changeBackground: scrollPos > 50}">
+    <nav id="navbar" class="navbar" :class="{changeBackground: scrollPos > 50}">
         <a @click="scrollToSection('#home')">
             <fa class="icon" icon="dumbbell" />
             <h2>GymMaster</h2>
@@ -50,6 +50,18 @@ setup(){
     box-shadow: $shadow-box;
     transition: 300ms ease-in-out;
 
+    @include respond-to(max-width, 768px){
+        transform: translateX(-101vw);
+        opacity:0;
+        flex-direction: column;
+        background-color: $color-dark;
+    }
+
+    &.navbar-active{
+        transform: translate(0);
+        opacity: 1;
+    }
+
     & > a {
         padding: 20px;
         color: $color-white;
@@ -78,7 +90,7 @@ setup(){
     }
 
     &.changeBackground {
-        background-color: #212121;
+        background-color: $color-dark;
         transition: 300ms ease-in-out;
     }
 }

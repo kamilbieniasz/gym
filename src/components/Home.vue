@@ -24,6 +24,10 @@ export default {
         justify-content: center;
         align-items: center;
 
+        @include respond-to(max-width, 768px){
+            height: 40vh !important;
+        }
+
         & > h1{
             font-size: $icon-size;
             color: $color-white;
