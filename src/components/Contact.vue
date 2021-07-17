@@ -1,20 +1,30 @@
 <template>
     <section class="contactWrapper">
         <h2 class="title">Kontakt</h2>
-        <div class="content">
+                    <div class="contact">
+                <h3><strong>Telefon: </strong>123 456 789</h3>
+                <h3><strong>Email: </strong>gymmaster@gym.pl</h3>
+                <h3><strong>Nasza siłownia otwarta jest całodobowo!</strong></h3>
+            </div>
+        <div class="content">                
             <div class="contactContainer">
-                <div class="contact">
-                    <h3><strong>Telefon: </strong>123 456 789</h3>
-                    <h3><strong>Email: </strong>gymmaster@gym.pl</h3>
-                    <h3><strong>Nasza siłownia otwarta jest całodobowo!</strong></h3>
-                </div>
                 <form>
-                    <div>
-                        <input />
-                        <input />
-                        <input />
-                    </div>
-                    <textarea maxlength="400" />
+                    <span>
+                        <label for="name">Imię i nazwisko</label>
+                        <input id="name" type="text" required/>
+                    </span>
+                    <span>
+                        <label for="email">Email</label>
+                        <input id="email" type="email" required/>
+                    </span>
+                    <span>
+                        <label for="phone">Nr telefonu</label>
+                        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" minlength="9" maxlength="9" required/>
+                    </span>
+                    <span>
+                        <label for="message">Wiadomość</label>
+                        <textarea id="message" maxlength="400" required/>
+                    </span>
                 </form>
                 <button>Wyślij</button>
             </div>
@@ -110,7 +120,7 @@ export default {
             height:100%;
             display:flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-evenly;
             // grid-template-columns: repeat(1, 1fr);
             align-items: center;
             font-size:$medium-font;
@@ -130,12 +140,29 @@ export default {
 
             & > form {
                 width: 90%;
+                display:flex;
+                flex-direction: column;
 
-                & > textarea{
-                    width: 100%;
-                    height: 200px;
-                    resize: none;
+                & > span{
+                    display:flex;
+                    flex-direction: column;
+
+                    & > label{
+                        color: $color-white;
+                    }
+                    & > input{
+                        height:25px;
+                        margin:10px 0;
+                    }
+
+                    & > textarea{
+                        width: 100%;
+                        height: 200px;
+                        resize: none;
+                    }
                 }
+
+
             }
         }
 
@@ -151,12 +178,12 @@ export default {
                 justify-content: center;
 
                 & > .buttons{
-                    padding: 0 70px;
+                    // padding: 0 70px;
 
                     & > button {
                         width: 100%;
-                        margin:30px;
-                        padding: 15px 10px;
+                        // margin:30px;
+                        // padding: 15px 10px;
                         border: 2px solid black;
                         background-color:$color-white;
                         border-radius: 0 15px 0 15px;
