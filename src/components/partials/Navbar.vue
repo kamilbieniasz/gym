@@ -1,10 +1,10 @@
 <template>
     <nav class="navbar" :class="{changeBackground: scrollPos > 50}">
-        <a>O nas</a>
-        <a>Cennik</a>
-        <a>Zajęcia grupowe</a>
-        <a>Trening personalny</a>
-        <a>Kontakt</a>
+        <a @click="scrollToSection('#aboutUs')">O nas</a>
+        <a @click="scrollToSection('#passes')">Cennik</a>
+        <a @click="scrollToSection('#groupClasses')">Zajęcia grupowe</a>
+        <a @click="scrollToSection('#personalTraining')">Trening personalny</a>
+        <a @click="scrollToSection('#Contact')">Kontakt</a>
     </nav>
 </template>
 <script>
@@ -19,11 +19,15 @@ setup(){
         scrollPos.value = window.scrollY;
     }
 
+    const scrollToSection = (selector) => {
+        document.querySelector(selector).scrollIntoView({ block:'end', behavior: 'smooth'});
+    }
+
     onMounted(() => {
         window.addEventListener('scroll', updateScroll);
     })
 
-    return {scrollPos};
+    return {scrollPos, scrollToSection};
 }
 }
 
