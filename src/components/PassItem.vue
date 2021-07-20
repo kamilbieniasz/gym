@@ -12,10 +12,7 @@
 <script>
 export default {
     name: "PassItem",
-    props: ["pass"],
-    setup(props) {
-        console.log(props.pass)
-    }
+    props: ["pass"]
 }
 </script>
 <style lang="scss" scoped>

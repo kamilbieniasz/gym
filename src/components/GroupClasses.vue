@@ -1,5 +1,5 @@
 <template>
-  <section class="groupClassesWrapper">
+  <section id="groupClasses" class="groupClassesWrapper">
         <h2 class="title">Zajęcia grupowe</h2>
         <div class="gridContainer">
             <GroupClassesItem bgImageJpg="/images/groupClasses/zumba.jpg" bgImageWebp="/images/groupClasses/zumba.webp" title="Zumba"/>

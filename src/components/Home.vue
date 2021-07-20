@@ -1,5 +1,5 @@
 <template>
-    <section class="homeWrapper">
+    <section id="home" class="homeWrapper">
         <h1>Gym Master</h1>
     </section>
 </template>
@@ -13,7 +13,7 @@ export default {
 
     .homeWrapper{
         background-size: cover;
-        height:60vh;
+        height:100vh !important;
         background-image: url('../assets/images/home/home.jpg');
         background-image: -webkit-image-set(url('../assets/images/home/home.jpg')1x );
         background-blend-mode: color-burn;
@@ -23,6 +23,10 @@ export default {
         display:flex;
         justify-content: center;
         align-items: center;
+
+        @include respond-to(max-width, 768px){
+            height: 40vh !important;
+        }
 
         & > h1{
             font-size: $icon-size;

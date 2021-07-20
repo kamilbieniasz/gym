@@ -1,5 +1,5 @@
 <template>
-    <section class="personalTrainingWrapper">
+    <section id="personalTraining" class="personalTrainingWrapper">
         <h2 class="title">Trening personalny</h2>
         <div class="descriptionContainer">
             <div class="description">
