@@ -18,8 +18,8 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/scss/style.scss';
     .gridItem{
-        width: 70%;
-        height: 80%;
+        width: 100%;
+        height: 100%;
         border-radius:0 25px 0 25px;
         background-color: $color-dark;
         color: $color-white;

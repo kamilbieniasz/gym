@@ -26,9 +26,6 @@ export default {
     justify-content: center;
     align-items: center;
     position:relative;
-    border-width: 2px 2px 0 2px;
-    border-style: solid;
-    border-color:$color-white;
 
     & > .icon{
         font-size: $small-icon-size;
