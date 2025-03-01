@@ -28,9 +28,13 @@ body{
     font-family: "Ubuntu", sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .scrollContainer{
     width: 100%;
-    height: fit-content;
+    //height: fit-content;
     scroll-behavior: smooth;
 
     & > section{
@@ -46,7 +50,7 @@ body{
         }
 
         @include respond-to(max-width, 1024px){
-            height:fit-content;
+            //height:fit-content;
         }
 
         & > .title{

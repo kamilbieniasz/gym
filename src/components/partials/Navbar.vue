@@ -1,97 +1,151 @@
 <template>
-    <nav id="navbar" class="navbar" ref="navbar" :class="{'active': $props.navbarActive}">
-        <a @click="scrollToSection($props.homeRef)">
-            <fa class="icon" icon="dumbbell" />
-            <h2>GymMaster</h2>
-        </a>
-        <a @click="scrollToSection($props.aboutUsRef)">O nas</a>
-        <a @click="scrollToSection($props.passesRef)">Cennik</a>
-        <a @click="scrollToSection($props.groupClassesRef)">Zajęcia grupowe</a>
-        <a @click="scrollToSection($props.personalTrainingRef)">Trening personalny</a>
-        <a @click="scrollToSection($props.contactRef)">Kontakt</a>
-    </nav>
+  <nav id="navbar" class="navbar" ref="navbar" :class="{'active': $props.navbarActive, 'visible': $props.navbarVisible}">
+    <h1>
+      <a @click="scrollToSection($props.homeRef)">
+        <fa class="icon" icon="dumbbell"/>
+        <span>GymMaster</span>
+      </a>
+    </h1>
+    <div class="links">
+      <a @click="scrollToSection($props.aboutUsRef)">O nas</a>
+      <a @click="scrollToSection($props.passesRef)">Cennik</a>
+      <a @click="scrollToSection($props.groupClassesRef)">Zajęcia grupowe</a>
+      <a @click="scrollToSection($props.personalTrainingRef)">Trening personalny</a>
+      <a @click="scrollToSection($props.contactRef)">Kontakt</a>
+    </div>
+  </nav>
 </template>
 <script>
 import {ref} from 'vue';
 
 export default {
-name: "Navbar",
-props: ['homeRef', 'aboutUsRef', 'passesRef', 'groupClassesRef', 'personalTrainingRef', 'contactRef', 'navbarActive'],
-setup(){
+  name: "Navbar",
+  props: ['homeRef', 'aboutUsRef', 'passesRef', 'groupClassesRef', 'personalTrainingRef', 'contactRef', 'navbarActive', 'navbarVisible'],
+  emits: ['closeNavbar'],
+  setup(props, {emit}) {
     const scrollPos = ref();
 
     const scrollToSection = (selector) => {
       selector?.$el?.scrollIntoView({
         behavior: "smooth",
-        block: "end"
-      })
+        block: window.innerWidth <= 768 ? "start" : "end"
+      });
+      closeNavbar();
+    }
+
+    const closeNavbar = () => {
+      console.log('closeNavbar');
+      emit('closeNavbar');
     }
 
     return {
       scrollPos,
-      scrollToSection
+      scrollToSection,
+      closeNavbar
     };
-}
+  }
 }
 
 </script>
 <style lang="scss" scoped>
 @import '../../assets/scss/style.scss';
 
-.navbar{
-    width: calc(100dvw - $scrollbarWidth);
-    height: $navbarHeight;
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-    position: fixed;
-    z-index:20;
-    border-bottom: 2px solid $color-red;
-    transition: 300ms ease-in-out;
+.navbar {
+  width: calc(100dvw - $scrollbarWidth);
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 20;
+  border-bottom: 2px solid $color-red;
+  transform: translateX(-100dvw);
+  transition: 300ms ease-in-out;
+  opacity: 0;
+  flex-direction: column;
+  background-color: $color-dark;
+  box-shadow: 0 5px 15px -5px $color-black;
+  padding: 0 0.5rem;
 
-    @include respond-to(max-width, 768px){
-        transform: translateX(-101vw);
-        opacity:0;
-        flex-direction: column;
-        background-color: $color-dark;
+  @include respond-to(min-width, 768px) {
+    height: $navbarHeight;
+    transform: translateX(0);
+    opacity: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: transparent;
+    transition: 300ms ease-in-out;
+    padding: 0 1rem;
+  }
+
+  &.active {
+    background-color: $color-dark;
+    transition: 300ms ease-in-out;
+  }
+
+  &.visible {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  & > div.links {
+    display: flex;
+    flex-direction: column;
+
+    @include respond-to(min-width, 768px) {
+      flex-direction: row;
+    }
+  }
+
+  & > h1 {
+    margin: 0;
+    height: 100%;
+    display: flex;
+  }
+
+  & > div.links,
+  & > h1 {
+    font-size: 1.5rem;
+
+    @include respond-to(min-width, 768px) {
+      font-size: 1rem;
     }
 
-    &.navbar-active{
-        transform: translate(0);
-        opacity: 1;
+    @include respond-to(min-width, 1024px) {
+      font-size: 1.5rem;
     }
 
     & > a {
-        padding: 20px;
-        color: $color-white;
-        font-size: $bigger-font;
-        transition: 300ms easy-in-out;
-        cursor: pointer;
-        text-shadow: 2px 2px $color-black;
+      padding: 1rem 0.25rem;
+      color: $color-white;
+      transition: 300ms easy-in-out;
+      cursor: pointer;
+      text-shadow: 2px 2px $color-black;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
 
-        &:first-child{
-            display:flex;
-            & > .icon {
-                margin: 0 10px;
-            }
+      @include respond-to(min-width, 768px) {
+        padding: 1rem;
 
-            & > h2{
-                margin:0;
-                font-size:26px;
-            }
+        &:hover {
+          transform: scale(1.1);
+          transition: 300ms ease-in-out;
+        }
+      }
 
+      &:first-child {
+        display: flex;
+
+        & > .icon {
+          margin-right: 10px;
         }
 
-        &:hover{
-            transform: scale(1.1);
-            transition: 300ms easy-in-out;
+        & > h2 {
+          margin: 0;
         }
+      }
     }
-
-    &.active {
-        background-color: $color-dark;
-        transition: 300ms ease-in-out;
-    }
+  }
 }
-    
+
 </style>

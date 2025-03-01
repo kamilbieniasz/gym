@@ -5,8 +5,10 @@
           :group-classes-ref="groupClassesRef"
           :personal-training-ref="personalTrainingRef"
           :contact-ref="contactRef"
-          :navbar-active="scrollPos > ACTIVE_NAVBAR_THRESHOLD"/>
-  <button class="hamburgerBtn" @click="showNavbar">
+          :navbar-active="scrollPos > ACTIVE_NAVBAR_THRESHOLD"
+          :navbar-visible="showNavbar"
+          @close-navbar="closeNavbar"/>
+  <button class="hamburgerBtn" @click="toggleNavbar">
     <span class="hamburgerBarContainer">
       <span class="hamburgerBar"></span>
     </span>
@@ -57,15 +59,19 @@ export default {
     const contactRef = ref();
     const scrollWrapperRef = ref();
     const scrollPos = ref(0);
+    const showNavbar = ref(false);
 
     const ACTIVE_NAVBAR_THRESHOLD = 100;
 
-    const showNavbar = () => {
-      document.querySelector('#navbar').classList.toggle('navbar-active')
+    const toggleNavbar = () => {
+      showNavbar.value = !showNavbar.value;
+    }
+
+    const closeNavbar = () => {
+      showNavbar.value = false;
     }
 
     const handleScroll = () => {
-      console.log('scrollWrapperRef.value?.scrollTop', scrollWrapperRef.value?.scrollTop);
       scrollPos.value = scrollWrapperRef.value?.scrollTop;
     }
 
@@ -81,6 +87,8 @@ export default {
       ACTIVE_NAVBAR_THRESHOLD,
       showNavbar,
       handleScroll,
+      toggleNavbar,
+      closeNavbar
     }
   }
 }
@@ -109,9 +117,8 @@ export default {
   display: none;
   outline: none;
   position: fixed;
-  top:5px;
-  right:5px;
-
+  top: 15px;
+  right: 15px;
 
   @include respond-to(max-width, 768px) {
     display: block;
