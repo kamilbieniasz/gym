@@ -1,0 +1,12 @@
+@import "./colors";
+@import "./variables";
+
+%scrollbar {
+  &::-webkit-scrollbar{
+    width: $scrollbarWidth;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-red;
+  }
+}

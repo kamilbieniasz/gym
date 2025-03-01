@@ -1,43 +1,36 @@
 <template>
-    <nav id="navbar" class="navbar" :class="{changeBackground: scrollPos > 50}">
-        <a @click="scrollToSection('#home')">
+    <nav id="navbar" class="navbar" ref="navbar" :class="{'active': $props.navbarActive}">
+        <a @click="scrollToSection($props.homeRef)">
             <fa class="icon" icon="dumbbell" />
             <h2>GymMaster</h2>
         </a>
-        <a @click="scrollToSection('#aboutUs')">O nas</a>
-        <a @click="scrollToSection('#passes')">Cennik</a>
-        <a @click="scrollToSection('#groupClasses')">Zajęcia grupowe</a>
-        <a @click="scrollToSection('#personalTraining')">Trening personalny</a>
-        <a @click="scrollToSection('#Contact')">Kontakt</a>
+        <a @click="scrollToSection($props.aboutUsRef)">O nas</a>
+        <a @click="scrollToSection($props.passesRef)">Cennik</a>
+        <a @click="scrollToSection($props.groupClassesRef)">Zajęcia grupowe</a>
+        <a @click="scrollToSection($props.personalTrainingRef)">Trening personalny</a>
+        <a @click="scrollToSection($props.contactRef)">Kontakt</a>
     </nav>
 </template>
 <script>
-import { ref, onMounted } from 'vue';
+import {ref} from 'vue';
 
 export default {
 name: "Navbar",
+props: ['homeRef', 'aboutUsRef', 'passesRef', 'groupClassesRef', 'personalTrainingRef', 'contactRef', 'navbarActive'],
 setup(){
     const scrollPos = ref();
-    const navbar = document.querySelector('#navbar');
-
-    const updateScroll = () => {
-        scrollPos.value =  document.querySelector('.scrollContainer').scrollTop;
-    }
 
     const scrollToSection = (selector) => {
-        if(window.innerWidth > 768){
-            document.querySelector(selector).scrollIntoView({ block:'end', behavior: 'smooth'});
-        } else {
-            document.querySelector(selector).scrollIntoView({ block:'start', behavior: 'smooth'});
-        }
-        navbar.classList.remove('navbar-active')
+      selector?.$el?.scrollIntoView({
+        behavior: "smooth",
+        block: "end"
+      })
     }
 
-    onMounted(() => {
-        document.querySelector('.scrollContainer').addEventListener('scroll', updateScroll);
-    })
-
-    return {scrollPos, scrollToSection};
+    return {
+      scrollPos,
+      scrollToSection
+    };
 }
 }
 
@@ -46,14 +39,14 @@ setup(){
 @import '../../assets/scss/style.scss';
 
 .navbar{
-    width: 100vw;
+    width: calc(100dvw - $scrollbarWidth);
+    height: $navbarHeight;
     display: flex;
     justify-content: center;
     background-color: transparent;
     position: fixed;
     z-index:20;
-    -webkit-box-shadow: $shadow-box; 
-    box-shadow: $shadow-box;
+    border-bottom: 2px solid $color-red;
     transition: 300ms ease-in-out;
 
     @include respond-to(max-width, 768px){
@@ -95,7 +88,7 @@ setup(){
         }
     }
 
-    &.changeBackground {
+    &.active {
         background-color: $color-dark;
         transition: 300ms ease-in-out;
     }

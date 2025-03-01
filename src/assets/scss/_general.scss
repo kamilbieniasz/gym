@@ -1,6 +1,7 @@
 @import "./colors";
 @import "./fonts";
 @import "./mixins";
+@import "./variables";
 
 @font-face {
     font-family: "Ubuntu";
@@ -30,15 +31,19 @@ body{
 .scrollContainer{
     width: 100%;
     height: fit-content;
+    scroll-behavior: smooth;
 
     & > section{
         width: 100%;
-        height: calc(100vh - 70px);
+        height: 100dvh;
         display: flex;
         flex-direction: column;
         align-items:center;
         padding:0 0 10px 0;
-        // overflow-x: hidden;
+
+        &:not(#home):not(.parallaxWrapper) {
+            height: calc(100dvh - $navbarHeight);
+        }
 
         @include respond-to(max-width, 1024px){
             height:fit-content;

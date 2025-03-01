@@ -119,7 +119,6 @@ export default {
             flex-direction:column;
             justify-content:space-evenly;
             align-items: center;
-            background-color:$color-dark;
             background-image: url('../assets/images/contact/contact.jpg');
             background-image: -webkit-image-set(url('../assets/images/contact/contact.webp')1x );
             background-size:cover;
